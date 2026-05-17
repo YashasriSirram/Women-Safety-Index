@@ -88,3 +88,36 @@ const MapSection = forwardRef((props: MapSectionProps, ref: any) => {
 const styles = StyleSheet.create({});
 
 export default MapSection;
+export const getCatColor = (category?: string | null) => {
+  switch ((category || '').toLowerCase()) {
+    case 'safe':
+      return '#22C55E';
+
+    case 'moderate':
+      return '#FACC15';
+
+    case 'low safety':
+    case 'unsafe':
+      return '#EF4444';
+
+    default:
+      return '#60A5FA';
+  }
+};
+
+export const getCatBg = (category?: string | null) => {
+  switch ((category || '').toLowerCase()) {
+    case 'safe':
+      return 'rgba(34,197,94,0.18)';
+
+    case 'moderate':
+      return 'rgba(250,204,21,0.18)';
+
+    case 'low safety':
+    case 'unsafe':
+      return 'rgba(239,68,68,0.18)';
+
+    default:
+      return 'rgba(96,165,250,0.18)';
+  }
+};

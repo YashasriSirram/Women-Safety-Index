@@ -6,7 +6,7 @@ import { Platform } from 'react-native';
 
 const getBaseUrl = (): string => {
   // FORCE LIVE BACKEND FOR TESTING
-  return 'https://wsi-backend-c7232ca7eb02.herokuapp.com';
+  return 'http://192.168.1.27:8000';
 };
 
 export const API_BASE_URL = getBaseUrl();

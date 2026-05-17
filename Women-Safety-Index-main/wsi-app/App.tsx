@@ -53,7 +53,7 @@ import {
   fetchSafeZones,
   API_BASE_URL,
 } from './src/api';
-import MapSection, { getCatColor, getCatBg } from './src/components/MapSection';
+import MapSection from './src/components/MapSection';
 import ChatBubble from './src/components/ChatBubble';
 import ChatInput from './src/components/ChatInput';
 import SafetyCard from './src/components/SafetyCard';
@@ -65,7 +65,39 @@ import useLux from './src/hooks/useLux';
 import useSafetySystem from './src/hooks/useSafetySystem';
 import useAudioBuffer from './src/hooks/useAudioBuffer';
 import useKinematicDetection from './src/hooks/useKinematicDetection';
+const getCatColor = (category?: string | null) => {
+  switch ((category || '').toLowerCase()) {
+    case 'safe':
+      return '#22C55E';
 
+    case 'moderate':
+      return '#FACC15';
+
+    case 'low safety':
+    case 'unsafe':
+      return '#EF4444';
+
+    default:
+      return '#60A5FA';
+  }
+};
+
+const getCatBg = (category?: string | null) => {
+  switch ((category || '').toLowerCase()) {
+    case 'safe':
+      return 'rgba(34,197,94,0.18)';
+
+    case 'moderate':
+      return 'rgba(250,204,21,0.18)';
+
+    case 'low safety':
+    case 'unsafe':
+      return 'rgba(239,68,68,0.18)';
+
+    default:
+      return 'rgba(96,165,250,0.18)';
+  }
+};
 // ─────────────────────────────────────────
 // Main App
 // ─────────────────────────────────────────
@@ -1055,5 +1087,6 @@ const styles = StyleSheet.create({
     color: Colors.text,
     fontSize: 14,
     ...Type.medium,
+
   },
 });
