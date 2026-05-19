@@ -1,5 +1,6 @@
 LLM BasedWomen Safety Prediction App 🛡️
 Women Safety App is a real-time safety intelligence platform designed to empower women with data-driven environmental awareness. It combines historical safety aggregates with live environmental data (like ambient light levels) and a cutting-edge Hybrid AI Assistant to provide actionable safety advice.
+Live project Link: https://mitra-frontend-z6jt.onrender.com  (on render)
 
 Project Banner Tech Stack
 
